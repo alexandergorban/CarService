@@ -17,27 +17,49 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CarService</a>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    
+    <div class="container">
+
+        <div class="navbar-header col-md-12">
+            <div class="col-md-4">
+                <img class="img-logo" src="~/images/logo.png" alt="AAMCO">
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Transmission Services</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">Auto Care & Repair</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Corporate Fleet Services</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Extended Warranty Services</a></li>
-                </ul>
+            <div class="col-md-8">
+                <div class="col-md-12 right-align">
+                    <a href="#">Schedule an appointment</a>
+                    <a href="#">Locate a service center</a>
+                </div>
+                <div class="col-md-12 phone-form right-align">
+                    <div class="col-md-5 text">
+                        <p>Your aamco is</p>
+                        <p>TaylorSville ut</p>
+                    </div>
+                    <div class="col-md-7 contact-phone">
+                        <a href="tel:+8017833280">(801) 783.32.80</a>
+                    </div>
+                </div>
             </div>
+            
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CarService</a>
         </div>
-    </nav>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Transmission Services</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">Auto Care & Repair</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Corporate Fleet Services</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Extended Warranty Services</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
