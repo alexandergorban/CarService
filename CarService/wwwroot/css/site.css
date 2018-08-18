@@ -1,5 +1,4 @@
 body {
-  padding-top: 120px;
   padding-bottom: 20px;
 }
 /* Wrapping element */
@@ -28,6 +27,12 @@ body {
     display: none;
   }
 }
+h2 {
+  color: #597295;
+}
+a:hover {
+  text-decoration: none;
+}
 .left-align {
   text-align: left;
 }
@@ -41,38 +46,78 @@ body {
   text-transform: uppercase;
 }
 /* Header */
+nav.navbar {
+  background: #f4f5f7;
+}
+nav.navbar .navbar-collapse {
+  text-align: center;
+}
+nav.navbar .navbar-collapse .line {
+  margin-top: 15px;
+  width: 100%;
+  display: inline-block;
+  border-top: 1px solid #000000;
+}
+nav.navbar .navbar-collapse ul.nav.navbar-nav {
+  display: inline-block;
+  float: none;
+  text-align: center;
+}
+nav.navbar .navbar-collapse ul.nav.navbar-nav li {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+nav.navbar .navbar-collapse ul.nav.navbar-nav li a {
+  padding: 8px 23px;
+}
 .navbar-header {
   padding-top: 15px;
+}
+.navbar-header .top-links a {
+  margin-left: 13px;
+  color: #597295;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }
 .navbar-header .img-logo {
   height: 52px;
 }
-.phone-form > .text {
+.phone-form {
+  padding: 5px 15px;
+}
+.phone-form .text {
+  margin-top: 11px;
   max-width: 180px;
-  text-align: right;
-}
-.phone-form > .contact-phone {
-  padding-right: 0;
-  padding-left: 0;
-  max-width: 260px;
-  text-align: right;
-}
-.phone-form > .contact-phone > a {
-  font-size: 34px;
-  color: #fe000b;
-}
-.phone-form > .contact-phone > a:hover {
-  text-decoration: none;
+  display: inline-block;
+  text-align: left;
 }
 .phone-form .text p {
   margin-bottom: 0;
   text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }
 .phone-form .text p:first-child {
   color: #999999;
-  font-size: 12px;
+  font-size: 11px;
 }
 .phone-form .text p:last-child {
   color: #666666;
-  font-size: 16px;
+  font-size: 14px;
+}
+.phone-form .contact-phone {
+  margin-left: 15px;
+  max-width: 290px;
+  float: right;
+  display: inline-block;
+}
+.phone-form .contact-phone a {
+  font-size: 35px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  color: #fe000b;
 }

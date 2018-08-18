@@ -1,5 +1,12 @@
-﻿body {
-    padding-top: 120px;
+﻿@background: #f4f5f7;
+@h-color: #597295;
+@nav-color: #597295;
+
+@font-roboto: 'Roboto', sans-serif;
+@font-lato: 'Lato', sans-serif;
+@font-open-sans: 'Open Sans', sans-serif;
+
+body {
     padding-bottom: 20px;
 }
 
@@ -34,6 +41,16 @@
     }
 }
 
+h2 {
+    color: @h-color;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 .left-align {
     text-align: left;
 }
@@ -51,8 +68,51 @@
 }
 
 /* Header */
+nav.navbar {
+    background: @background;
+
+    .navbar-collapse {
+        text-align: center;
+
+        .line {
+            margin-top: 15px;
+            width: 100%;
+            display: inline-block;
+            border-top: 1px solid #000000;
+        }
+
+        ul.nav.navbar-nav {
+            display: inline-block;
+            float: none;
+            text-align: center;
+
+            li {
+                text-transform: uppercase;
+                font-size: 13px;
+                font-family: @font-open-sans;
+                font-weight: bold;
+
+                a {
+                    padding: 8px 23px;
+                }
+            }
+        }
+    }
+}
+
 .navbar-header {
     padding-top: 15px;
+
+    .top-links {
+        a {
+            margin-left: 13px;
+            color: @nav-color;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-family: @font-open-sans;
+            font-weight: bold;
+        }
+    }
 }
 
 .navbar-header .img-logo {
@@ -60,46 +120,49 @@
 }
 
 
-.phone-form > .text {
-    max-width: 180px;
-    text-align: right;
-}
-
-
-
-.phone-form > .contact-phone {
-    padding-right: 0;
-    padding-left: 0;
-    max-width: 260px;
-    text-align: right;
-}
-
-.phone-form > .contact-phone > a {
-    font-size: 34px;
-    color: #fe000b;
-}
-
-.phone-form > .contact-phone > a:hover {
-    text-decoration: none;
-}
-
 .phone-form {
-    
+    padding: 5px 15px;
 
     .text {
+        margin-top: 11px;
+        max-width: 180px;
+        display: inline-block;
+        text-align: left;
+
         p {
             margin-bottom: 0;
             text-transform: uppercase;
+            font-family: @font-open-sans;
+            font-weight: bold;
 
             &:first-child {
                 color: #999999;
-                font-size: 12px
+                font-size: 11px
             }
 
             &:last-child {
                 color: #666666;
-                font-size: 16px;
+                font-size: 14px;
             }
         }
     }
+
+    .contact-phone {
+        margin-left: 15px;
+        max-width: 290px;
+        float: right;
+        display: inline-block;
+
+        a {
+            font-size: 35px;
+            font-family: @font-open-sans;
+            letter-spacing: 2px;
+            color: #fe000b;
+        }
+    }
 }
+
+
+
+
+
