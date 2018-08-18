@@ -1,6 +1,4 @@
-using System;
-
-namespace CarService.Models
+namespace CarService.WebMVC.Models
 {
     public class ErrorViewModel
     {
