@@ -235,6 +235,57 @@ nav.navbar .navbar-collapse ul.nav.navbar-nav li a {
     font-size: 28px;
   }
 }
+/*Footer*/
+footer {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background: #1d3f6f;
+}
+footer .ul-logo {
+  padding-left: 20px;
+}
+footer .ul-logo .img-logo {
+  height: 52px;
+}
+footer h5 {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+}
+footer ul li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+footer ul li a {
+  color: #ffffff;
+}
+footer .line {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  width: 100%;
+  display: inline-block;
+  display: block;
+  border-top: 1px solid #ffffff;
+}
+footer .connect-section {
+  text-align: center;
+}
+footer .social-icons {
+  margin-top: 6px;
+  text-align: center;
+}
+footer .social-icons a {
+  margin-left: 21px;
+  margin-right: 21px;
+}
 /*Index.cshtml*/
 @media screen and (max-width: 768px) {
   .col-carousel {
@@ -331,55 +382,4 @@ nav.navbar .navbar-collapse ul.nav.navbar-nav li a {
   .first-row {
     margin-top: 50px;
   }
-}
-/*Footer*/
-footer {
-  padding-top: 35px;
-  padding-bottom: 35px;
-  background: #1d3f6f;
-}
-footer .ul-logo {
-  padding-left: 20px;
-}
-footer .ul-logo .img-logo {
-  height: 52px;
-}
-footer h5 {
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-footer ul {
-  list-style-type: none;
-  padding-left: 0;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-family: 'Open Sans', sans-serif;
-}
-footer ul li {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-footer ul li a {
-  color: #ffffff;
-}
-footer .line {
-  margin-top: 40px;
-  margin-bottom: 15px;
-  width: 100%;
-  display: inline-block;
-  display: block;
-  border-top: 1px solid #ffffff;
-}
-footer .connect-section {
-  text-align: center;
-}
-footer .social-icons {
-  margin-top: 6px;
-  text-align: center;
-}
-footer .social-icons a {
-  margin-left: 21px;
-  margin-right: 21px;
 }
