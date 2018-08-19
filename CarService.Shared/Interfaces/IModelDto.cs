@@ -6,5 +6,6 @@ namespace CarService.Shared.Interfaces
 {
     public interface IModelDto
     {
+        Guid Id { get; set; }
     }
 }
