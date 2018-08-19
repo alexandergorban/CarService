@@ -271,11 +271,25 @@ nav.navbar {
 
 /*Index.cshtml*/
 .col-carousel {
+    @media screen and (max-width: 768px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .text-carousel {
         z-index: 1;
         position: relative;
         display: block;
         text-align: center;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 0;
+            color: #000000;
+        }
+
+        @media (min-width: 768px) and (max-width: 992px) {
+            margin-top: -180px;
+        }
 
         @media screen and (min-width: 1200px) {
             margin-top: 50px;
@@ -286,18 +300,32 @@ nav.navbar {
             font-weight: bold;
             color: #ffffff;
             font-size: 35px;
+
+            @media screen and (max-width: 768px) {
+                color: #000000;
+                font-size: 25px;
+            }
         }
 
         p {
+            color: #ffffff;
+
+            @media screen and (max-width: 768px) {
+                color: #000000;
+            }
+
             @media screen and (min-width: 1200px) {
                 margin-top: 50px;
-                color: #ffffff;
             }
         }
 
         a {
             span {
                 color: #ffffff;
+
+                @media screen and (max-width: 768px) {
+                    color: #000000;
+                }
             }
         }
     }
@@ -318,17 +346,23 @@ nav.navbar {
         margin-right: 15px;
     }
 
+    .carousel-inner {
+        @media screen and (max-width: 768px) {
+            margin-right: 0;
+        }
+    }
+
     .carousel-caption {
         padding-bottom: 20px;
     }
 }
 
 .first-row {
-    @media (min-width: 992px) and (max-width: 1200px) {
-        margin-top: 150px;
+    @media (min-width: 768px) and (max-width: 992px) {
+        margin-top: 80px;
     }
 
-    @media screen and (min-width: 1200px) {
-        margin-top: 220px;
+    @media screen and (min-width: 992px) {
+        margin-top: 50px;
     }
 }
