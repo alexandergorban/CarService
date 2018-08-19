@@ -9,10 +9,18 @@ namespace CarService.WebMVC.ViewModels
 {
     public class OrderDetails
     {
+        [Required]
+        [DataType(DataType.DateTime)]
         public DateTime DataFirst { get; set; }
+
+        [DataType(DataType.Time)]
         public DateTime TimeFirst { get; set; }
 
+        [Required]
+        [DataType(DataType.DateTime)]
         public DateTime DataSecond { get; set; }
+
+        [DataType(DataType.Time)]
         public DateTime TimeSecond { get; set; }
 
         [Display(Name = "Transmission")]
@@ -34,15 +42,12 @@ namespace CarService.WebMVC.ViewModels
         public string SelectedCarType { get; set; }
         public IEnumerable<SelectListItem> CarTypes { get; set; }
 
-
         public string OrderMessage { get; set; }
-
 
         [Required]
         [StringLength(75)]
         public string FirstName { get; set; }
 
-        [Required]
         [StringLength(75)]
         public string SecondName { get; set; }
 
@@ -51,7 +56,6 @@ namespace CarService.WebMVC.ViewModels
         [Display(Name = "Email")]
         public string EMail { get; set; }
 
-        [Required]
         [StringLength(15)]
         public string PhoneNumber { get; set; }
     }
