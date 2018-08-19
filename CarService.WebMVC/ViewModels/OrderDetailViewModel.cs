@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CarService.WebMVC.ViewModels
 {
-    public class OrderDetailsViewModel
+    public class OrderDetailViewModel
     {
         [Required]
         [DataType(DataType.DateTime)]
