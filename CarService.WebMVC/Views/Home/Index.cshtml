@@ -1,4 +1,6 @@
-﻿@{
+﻿@model CarService.WebMVC.ViewModels.OrderDetails
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -74,53 +76,156 @@
             <h4>Choose your services</h4>
             <p>Please select the type of service(s) needed</p>
             <div class="col-md-12">
-                Transmission
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="Transmission">
+                            <input asp-for="Transmission" />
+                            @Html.DisplayNameFor(m => m.Transmission)
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="col-md-12">
-                Vehicle Maintenance
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="VehicleMaintenance">
+                            <input asp-for="VehicleMaintenance" />
+                            @Html.DisplayNameFor(m => m.VehicleMaintenance)
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="col-md-12">
-                Vehicle Rapair
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="VehicleRapair">
+                            <input asp-for="VehicleRapair" />
+                            @Html.DisplayNameFor(m => m.VehicleRapair)
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="col-md-12">
-                Other
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="Other">
+                            <input asp-for="Other" />
+                            @Html.DisplayNameFor(m => m.Other)
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-md-6">
+
         <div class="col-md-12">
             <h4>Your Vehicle</h4>
         </div>
         <div class="col-sm-6 col-md-6">
-            Year of car
+            <div class="form-group">
+                <input asp-for="YearOfCar" class="form-control form-input" type="number" placeholder="Year of car" />
+                <span asp-validation-for="YearOfCar" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
             Select your car
+            @*<div class="form-group">
+                @Html.LabelFor(x => Model.SelectedCarType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(x => Model.SelectedCarType, new SelectList(Model.CarTypes, "Value", "Text"), htmlAttributes: new { @class = "form-control", id = "CarType"})
+                    @Html.ValidationMessageFor(x => x.SelectedCarType, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
         </div>
         <div class="col-sm-12 col-md-12">
-            Write your message
+            <div class="form-group">
+                <input asp-for="OrderMessage" class="form-control form-input" type="text" placeholder="Write your message" />
+                <span asp-validation-for="OrderMessage" class="text-danger"></span>
+            </div>
         </div>
+
+
         <div class="col-md-12">
             <h4>Personal Details</h4>
         </div>
         <div class="col-sm-6 col-md-6">
-            First Name
+            <div class="form-group">
+                <input asp-for="FirstName" class="form-control form-input" type="text" placeholder="First Name"/>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            Second Name
+            <div class="form-group">
+                <input asp-for="SecondName" class="form-control form-input" type="text" placeholder="Second Name"/>
+                <span asp-validation-for="SecondName" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            E-Mail
+            <div class="form-group">
+                <input asp-for="EMail" class="form-control form-input" type="text" placeholder="E-Mail"/>
+                <span asp-validation-for="EMail" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            Phone Number
+            <div class="form-group">
+                <input asp-for="PhoneNumber" class="form-control form-input" type="text" placeholder="Phone Number"/>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            Clear
+            <a asp-action="ClearForm" class="btn btn-default">Clear</a>
         </div>
         <div class="col-sm-6 col-md-6">
-            Send
+            <a asp-action="SendOrder" class="btn btn-primary">Send</a>
         </div>
+
+        @*@{
+                if (IsPost) {
+                    string firstname = Request.Form["firstname"];
+                    string secondname = Request.Form["secondname"];
+                    string email = Request.Form["email"];
+                    int phonenumber = Request.Form["phonenumber"].AsInt();
+
+                    <text>
+                        You entered: <br />
+                        Company Name: @firstname <br />
+                        Contact Name: @secondname <br />
+                        Employee Count: @email <br />
+                        Employee Count: @phonenumber <br />
+                    </text>
+                }
+            }*@
+
+        @*<form method="post">
+
+                <fieldset>
+                    <div class="col-md-12">
+                        <h4>Personal Details</h4>
+                    </div>
+                    <legend>Personal Details</legend>
+                    <div class="col-sm-6">
+                        <input type="text" placeholder="First Name" name="FirstName" value=""/>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" placeholder="Second Name" name="SecondName" value=""/>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" placeholder="E-Mail" name="EMail" value=""/>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" placeholder="Phone Number" name="PhoneNumber" value=""/>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>&nbsp;</label>
+                        <input type="submit" value="Clear" class="submit"/>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <label>&nbsp;</label>
+                        <input type="submit" value="Send" class="submit"/>
+                    </div>
+                </fieldset>
+            </form>*@
     </div>
 </div>
 
@@ -129,19 +234,19 @@
         <div class="col-md-12">
             <h3>Sign Up for special offers</h3>
             <p>
-                Enter your mail and you will get the best<br/>
+                Enter your mail and you will get the best<br />
                 offers we have directlly to your inbox
             </p>
         </div>
         <div class="col-md-12">
-            
+
         </div>
     </div>
     <div class="col-md-6">
         <div class="col-md-12">
             <h3>Tell to your friends</h3>
             <p>
-                Some of your friends may like to visit if you<br/>
+                Some of your friends may like to visit if you<br />
                 recommend us. They'll trust your taste!
             </p>
         </div>

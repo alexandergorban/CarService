@@ -29,5 +29,15 @@ namespace CarService.WebMVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult ClearForm()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IActionResult SendOrder()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
