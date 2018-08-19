@@ -237,6 +237,7 @@ nav.navbar .navbar-collapse ul.nav.navbar-nav li a {
 }
 /*Footer*/
 footer {
+  margin-top: 50px;
   padding-top: 35px;
   padding-bottom: 35px;
   background: #1d3f6f;
@@ -391,7 +392,7 @@ footer .social-icons a {
   font-family: 'Roboto', sans-serif;
 }
 .share-buttons a img {
-  height: 40px;
+  height: 45px;
   padding: 5px;
   border: 0;
   box-shadow: 0;
