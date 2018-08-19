@@ -23,4 +23,10 @@
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CarService.BusinessLayer\CarService.BusinessLayer.csproj" />
+    <ProjectReference Include="..\CarService.DataAccessLayer\CarService.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\CarService.Shared\CarService.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

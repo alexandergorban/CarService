@@ -1,7 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarService.DataAccessLayer\CarService.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\CarService.Shared\CarService.Shared.csproj" />
+  </ItemGroup>
 
 </Project>
