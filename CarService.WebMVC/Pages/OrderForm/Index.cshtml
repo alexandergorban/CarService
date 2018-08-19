@@ -1,44 +1,5 @@
 ﻿@model CarService.WebMVC.ViewModels.OrderDetailViewModel
 
-@{
-    ViewData["Title"] = "Home Page";
-}
-
-
-<div class="row">
-    <div class="col-md-12 col-carousel">
-        <div id="carousel-top-generic" class="carousel slide" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="~/images/original-slide-1.png" alt="Slide">
-                    <div class="carousel-caption"></div>
-                </div>
-                <div class="item">
-                    <img src="~/images/original-slide-2.png" alt="Slide">
-                    <div class="carousel-caption"></div>
-                </div>
-                <div class="item">
-                    <img src="~/images/original-slide-3.png" alt="Slide">
-                    <div class="carousel-caption"></div>
-                </div>
-            </div>
-        </div>
-        <div class="text-carousel">
-            <h2>Schedule your next appoimtment</h2>
-            <p>Scroll down for details</p>
-            <a href="#">
-                <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="row first-row">
-    <div class="col-md-12">
-        <h2>Please select a convenient time to leave your vehicle with us</h2>
-    </div>
-</div>
 
 <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
     <div class="row">
@@ -194,49 +155,9 @@
                 <a asp-action="ClearForm" class="btn btn-default">Clear</a>
             </div>
             <div class="col-sm-6 col-md-6">
-                @*<a asp-action="SendOrder" class="btn btn-primary">Send</a>*@
                 <button type="submit" class="btn btn-primary">Send</button>
             </div>
         </div>
     </div>
 </form>
-
-<div class="row">
-    <div class="col-md-6">
-        <div class="col-md-12">
-            <h3>Sign Up for special offers</h3>
-            <p>
-                Enter your mail and you will get the best<br />
-                offers we have directlly to your inbox
-            </p>
-        </div>
-        <div class="col-md-12">
-            <form class="form-inline">
-                <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter here your email">
-                </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="col-md-12">
-            <h3>Tell to your friends</h3>
-            <p>
-                Some of your friends may like to visit if you<br />
-                recommend us. They'll trust your taste!
-            </p>
-        </div>
-        <div class="col-md-12 share-buttons">
-            <!-- Facebook -->
-            <a href="http://www.facebook.com/sharer.php?u=http://www.usergroup.od.ua" target="_blank">
-                <img src="~/images/FB-btn-bg.png" alt="Facebook" />
-            </a>
-            <!-- Twitter -->
-            <a href="https://twitter.com/share?url=http://www.usergroup.od.ua&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-                <img src="~/images/Twitter-btn-bg.png" alt="Twitter" />
-            </a>
-        </div>
-    </div>
-</div>
 
