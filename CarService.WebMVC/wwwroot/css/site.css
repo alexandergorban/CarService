@@ -383,3 +383,10 @@ footer .social-icons a {
     margin-top: 50px;
   }
 }
+.first-row h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #1d3f6f;
+  font-size: 34px;
+  font-family: 'Roboto', sans-serif;
+}
