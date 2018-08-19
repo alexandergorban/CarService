@@ -9,7 +9,11 @@ namespace CarService.WebMVC.ViewModels
 {
     public class OrderDetails
     {
-       
+        public DateTime DataFirst { get; set; }
+        public DateTime TimeFirst { get; set; }
+
+        public DateTime DataSecond { get; set; }
+        public DateTime TimeSecond { get; set; }
 
         [Display(Name = "Transmission")]
         public bool Transmission { get; set; }
@@ -43,7 +47,8 @@ namespace CarService.WebMVC.ViewModels
         public string SecondName { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [EmailAddress]
+        [Display(Name = "Email")]
         public string EMail { get; set; }
 
         [Required]

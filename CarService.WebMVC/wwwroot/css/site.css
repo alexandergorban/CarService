@@ -390,3 +390,10 @@ footer .social-icons a {
   font-size: 34px;
   font-family: 'Roboto', sans-serif;
 }
+.share-buttons a img {
+  height: 40px;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0;
+  display: inline;
+}

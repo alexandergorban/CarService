@@ -50,16 +50,28 @@
             <h4>Data & Time</h4>
         </div>
         <div class="col-sm-6 col-md-6">
-            Select a date
+            <div class="form-group">
+                <input asp-for="DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='datetime-local')" />
+                <span asp-validation-for="DataFirst" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            Select your time
+            <div class="form-group">
+                <input asp-for="TimeFirst" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
+                <span asp-validation-for="TimeFirst" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            Select a date
+            <div class="form-group">
+                <input asp-for="DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='datetime-local')" />
+                <span asp-validation-for="DataSecond" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            Select your time
+            <div class="form-group">
+                <input asp-for="TimeSecond" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='date')"/>
+                <span asp-validation-for="TimeSecond" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-sm-6 col-md-6">
             <h4>Store Hours</h4>
@@ -129,7 +141,6 @@
             </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            Select your car
             @*<div class="form-group">
                 @Html.LabelFor(x => Model.SelectedCarType, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
@@ -137,6 +148,17 @@
                     @Html.ValidationMessageFor(x => x.SelectedCarType, "", new { @class = "text-danger" })
                 </div>
             </div>*@
+            
+            <div class="form-group">
+                <select class="form-control">
+                    <option value="">Select your car</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            
         </div>
         <div class="col-sm-12 col-md-12">
             <div class="form-group">
@@ -144,8 +166,6 @@
                 <span asp-validation-for="OrderMessage" class="text-danger"></span>
             </div>
         </div>
-
-
         <div class="col-md-12">
             <h4>Personal Details</h4>
         </div>
@@ -179,23 +199,6 @@
         <div class="col-sm-6 col-md-6">
             <a asp-action="SendOrder" class="btn btn-primary">Send</a>
         </div>
-
-        @*@{
-                if (IsPost) {
-                    string firstname = Request.Form["firstname"];
-                    string secondname = Request.Form["secondname"];
-                    string email = Request.Form["email"];
-                    int phonenumber = Request.Form["phonenumber"].AsInt();
-
-                    <text>
-                        You entered: <br />
-                        Company Name: @firstname <br />
-                        Contact Name: @secondname <br />
-                        Employee Count: @email <br />
-                        Employee Count: @phonenumber <br />
-                    </text>
-                }
-            }*@
 
         @*<form method="post">
 
@@ -249,6 +252,16 @@
                 Some of your friends may like to visit if you<br />
                 recommend us. They'll trust your taste!
             </p>
+            <div class="share-buttons">
+                <!-- Facebook -->
+                <a href="http://www.facebook.com/sharer.php?u=http://www.usergroup.od.ua" target="_blank">
+                    <img src="~/images/FB-btn-bg.png" alt="Facebook" />
+                </a>
+                <!-- Twitter -->
+                <a href="https://twitter.com/share?url=http://www.usergroup.od.ua&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                    <img src="~/images/Twitter-btn-bg.png" alt="Twitter" />
+                </a>
+            </div>
         </div>
         <div class="col-md-12">
 
