@@ -73,8 +73,40 @@ nav.navbar {
     background: @background;
     opacity: 0.95;
 
+    @media screen and (min-width: 768px) {
+        &.sticky {
+            opacity: 1;
+            z-index: 2;
+
+            div.line {
+                border-top: none;
+            }
+        }
+    }
+
     .navbar-collapse {
         text-align: center;
+
+        @media screen and (min-width: 768px) {
+            /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+            &.sticky {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                opacity: 1;
+                background: @background;
+
+                ul.nav.navbar-nav {
+                    margin-top: -12px;
+                }
+            }
+            /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+            &.sticky + .content {
+                padding-top: 60px;
+            }
+        }
 
         .line {
             margin-top: 3px;
