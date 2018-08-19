@@ -11,20 +11,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarService.DataAccessLayer.Repositories
 {
-    public class OrderDetailRepository : BaseRepository<OrderDetail>
+    public class UserDetailRepository : BaseRepository<UserDetail>
     {
         private readonly CarServiceDbContext _context;
 
-        public OrderDetailRepository(CarServiceDbContext context, IMapper mapper)
+        public UserDetailRepository(CarServiceDbContext context, IMapper mapper)
             : base(context, mapper)
         {
             _context = context;
         }
 
-        public override async Task<IEnumerable<OrderDetail>> GetEntitiesAsync()
+        public override async Task<IEnumerable<UserDetail>> GetEntitiesAsync()
         {
-            return await _context.OrdersDetail
-                .OrderBy(o => o.TimeFirst)
+            return await _context.UsersDetail
+                .OrderBy(o => o.FirstName)
                 .ToListAsync();
         }
     }

@@ -19,9 +19,6 @@ namespace CarService.Shared.Models
         public string YearOfCar { get; set; }
         public CarTypeDto SelectedCarType { get; set; }
         public string OrderMessage { get; set; }
-        public string FirstName { get; set; }
-        public string SecondName { get; set; }
-        public string EMail { get; set; }
-        public string PhoneNumber { get; set; }
+        public UserDetailDto UserDetail { get; set; }
     }
 }

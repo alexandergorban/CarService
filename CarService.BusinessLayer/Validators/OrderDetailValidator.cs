@@ -10,21 +10,13 @@ namespace CarService.BusinessLayer.Validators
     {
         public OrderDetailValidator()
         {
-            RuleFor(a => a.DataFirst)
+            RuleFor(o => o.DataFirst)
                 .NotNull()
                 .NotEmpty();
 
-            RuleFor(a => a.FirstName)
+            RuleFor(o => o.UserDetail)
                 .NotNull()
-                .NotEmpty()
-                .MinimumLength(1)
-                .MaximumLength(30);
-
-            RuleFor(a => a.EMail)
-                .NotNull()
-                .NotEmpty()
-                .MinimumLength(1)
-                .MaximumLength(30);
+                .NotEmpty();
         }
     }
 }

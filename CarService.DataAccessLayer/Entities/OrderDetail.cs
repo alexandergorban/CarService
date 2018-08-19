@@ -27,13 +27,6 @@ namespace CarService.DataAccessLayer.Entities
         public string OrderMessage { get; set; }
 
         [Required]
-        [MaxLength(30)]
-        public string FirstName { get; set; }
-        public string SecondName { get; set; }
-
-        [Required]
-        [MaxLength(30)]
-        public string EMail { get; set; }
-        public string PhoneNumber { get; set; }
+        public UserDetail UserDetail { get; set; }
     }
 }

@@ -12,26 +12,33 @@ namespace CarService.DataAccessLayer.Data
             // first, clear the database.  This ensures we can always start 
             // fresh with each demo.  Not advised for production environments, obviously
 
-            context.OrderDetails.RemoveRange(context.OrderDetails);
+            context.OrdersDetail.RemoveRange(context.OrdersDetail);
+            context.UsersDetail.RemoveRange(context.UsersDetail);
             context.CarTypes.RemoveRange(context.CarTypes);
             context.SaveChanges();
 
             // init seed data
-            var orderDetails = new List<OrderDetail>()
+            var ordersDetail = new List<OrderDetail>()
             {
                 new OrderDetail()
                 {
                     DataFirst = DateTime.Now,
                     DataSecond = DateTime.Now,
-                    FirstName = "Jins",
-                    EMail = "jinstest@test.com"
+                    UserDetail = new UserDetail()
+                    {
+                        FirstName = "Jins",
+                        EMail = "jinstest@test.com"
+                    }
                 },
                 new OrderDetail()
                 {
                     DataFirst = DateTime.Now,
                     DataSecond = DateTime.Now,
-                    FirstName = "Mike",
-                    EMail = "miketest@test.com"
+                    UserDetail = new UserDetail()
+                    {
+                        FirstName = "Mike",
+                        EMail = "miketest@test.com"
+                    }
                 }
             };
 
@@ -59,7 +66,7 @@ namespace CarService.DataAccessLayer.Data
                 }
             };
 
-            context.OrderDetails.AddRange(orderDetails);
+            context.OrdersDetail.AddRange(ordersDetail);
             context.CarTypes.AddRange(carTypes);
             context.SaveChanges();
         }
