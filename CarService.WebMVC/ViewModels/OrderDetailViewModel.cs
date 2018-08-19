@@ -39,7 +39,7 @@ namespace CarService.WebMVC.ViewModels
         public string YearOfCar { get; set; }
 
         [Display(Name = "Selected Car Type")]
-        public string SelectedCarType { get; set; }
+        public int SelectedCarType { get; set; }
         public IEnumerable<SelectListItem> CarTypes { get; set; }
 
         public string OrderMessage { get; set; }

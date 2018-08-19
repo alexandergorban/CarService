@@ -7,6 +7,7 @@ using CarService.DataAccessLayer.Entities;
 using CarService.DataAccessLayer.Interfaces;
 using CarService.DataAccessLayer.Repositories;
 using CarService.Shared.Models;
+using CarService.WebMVC.ViewModels;
 using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -85,6 +86,23 @@ namespace CarService.WebMVC
                 cfg.CreateMap<OrderDetail, OrderDetailDto>();
                 cfg.CreateMap<OrderDetailDto, OrderDetail>();
                 cfg.CreateMap<OrderDetail, OrderDetail>();
+
+                cfg.CreateMap<OrderDetailViewModel, OrderDetailDto>()
+                    .ForMember(o => o.SelectedCarType, 
+                        opt => opt.MapFrom(ovm => 
+                            new CarTypeDto()
+                            {
+                                ModelId = ovm.SelectedCarType
+                            }))
+                    .ForMember(o => o.UserDetail, 
+                        opt => opt.MapFrom(ovm => 
+                            new UserDetailDto()
+                            {
+                                FirstName = ovm.FirstName,
+                                SecondName = ovm.SecondName,
+                                EMail = ovm.EMail,
+                                PhoneNumber = ovm.PhoneNumber
+                            }));
             });
 
             return config;

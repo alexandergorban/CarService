@@ -44,163 +44,168 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="col-md-12">
-            <h4>Data & Time</h4>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='datetime-local')" />
-                <span asp-validation-for="DataFirst" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="TimeFirst" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
-                <span asp-validation-for="TimeFirst" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='datetime-local')" />
-                <span asp-validation-for="DataSecond" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="TimeSecond" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='date')"/>
-                <span asp-validation-for="TimeSecond" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <h4>Store Hours</h4>
-            <p>Mon - Wed</p>
-            <p>08:00 AM - 05:00 PM</p>
-            <p>Thu</p>
-            <p>08:00 AM - 04:00 PM</p>
-            <p>Fri</p>
-            <p>08:00 AM - 01:00 PM</p>
-            <p>Sat</p>
-            <p>Close</p>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <h4>Choose your services</h4>
-            <p>Please select the type of service(s) needed</p>
+<form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+    <div class="row">
+        <div class="col-md-6">
             <div class="col-md-12">
+                <h4>Data & Time</h4>
+            </div>
+            <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="Transmission">
-                            <input asp-for="Transmission" />
-                            @Html.DisplayNameFor(m => m.Transmission)
-                        </label>
+                    <input asp-for="DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='datetime-local')" />
+                    <span asp-validation-for="DataFirst" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <input asp-for="TimeFirst" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
+                    <span asp-validation-for="TimeFirst" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <input asp-for="DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='datetime-local')" />
+                    <span asp-validation-for="DataSecond" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <input asp-for="TimeSecond" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='date')" />
+                    <span asp-validation-for="TimeSecond" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <h4>Store Hours</h4>
+                <p>Mon - Wed</p>
+                <p>08:00 AM - 05:00 PM</p>
+                <p>Thu</p>
+                <p>08:00 AM - 04:00 PM</p>
+                <p>Fri</p>
+                <p>08:00 AM - 01:00 PM</p>
+                <p>Sat</p>
+                <p>Close</p>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <h4>Choose your services</h4>
+                <p>Please select the type of service(s) needed</p>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="Transmission">
+                                <input asp-for="Transmission" />
+                                @Html.DisplayNameFor(m => m.Transmission)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="VehicleMaintenance">
+                                <input asp-for="VehicleMaintenance" />
+                                @Html.DisplayNameFor(m => m.VehicleMaintenance)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="VehicleRapair">
+                                <input asp-for="VehicleRapair" />
+                                @Html.DisplayNameFor(m => m.VehicleRapair)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="Other">
+                                <input asp-for="Other" />
+                                @Html.DisplayNameFor(m => m.Other)
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="VehicleMaintenance">
-                            <input asp-for="VehicleMaintenance" />
-                            @Html.DisplayNameFor(m => m.VehicleMaintenance)
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="VehicleRapair">
-                            <input asp-for="VehicleRapair" />
-                            @Html.DisplayNameFor(m => m.VehicleRapair)
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="Other">
-                            <input asp-for="Other" />
-                            @Html.DisplayNameFor(m => m.Other)
-                        </label>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-    <div class="col-md-6">
+        <div class="col-md-6">
 
-        <div class="col-md-12">
-            <h4>Your Vehicle</h4>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="YearOfCar" class="form-control form-input" type="number" placeholder="Year of car" />
-                <span asp-validation-for="YearOfCar" class="text-danger"></span>
+            <div class="col-md-12">
+                <h4>Your Vehicle</h4>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            @*<div class="form-group">
-                @Html.LabelFor(x => Model.SelectedCarType, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-5">
-                    @Html.DropDownListFor(x => Model.SelectedCarType, new SelectList(Model.CarTypes, "Value", "Text"), htmlAttributes: new { @class = "form-control", id = "CarType"})
-                    @Html.ValidationMessageFor(x => x.SelectedCarType, "", new { @class = "text-danger" })
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <input asp-for="YearOfCar" class="form-control form-input" type="number" placeholder="Year of car" />
+                    <span asp-validation-for="YearOfCar" class="text-danger"></span>
                 </div>
-            </div>*@
-            
-            <div class="form-group">
-                <select class="form-control">
-                    <option value="">Select your car</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
             </div>
-            
-        </div>
-        <div class="col-sm-12 col-md-12">
-            <div class="form-group">
-                <input asp-for="OrderMessage" class="form-control form-input" type="text" placeholder="Write your message" />
-                <span asp-validation-for="OrderMessage" class="text-danger"></span>
+            <div class="col-sm-6 col-md-6">
+                @*<div class="form-group">
+                        @Html.LabelFor(x => Model.SelectedCarType, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-5">
+                            @Html.DropDownListFor(x => Model.SelectedCarType, new SelectList(Model.CarTypes, "Value", "Text"), htmlAttributes: new { @class = "form-control", id = "CarType"})
+                            @Html.ValidationMessageFor(x => x.SelectedCarType, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    <select class="form-control">
+                        <option value="">Select your car</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
             </div>
-        </div>
-        <div class="col-md-12">
-            <h4>Personal Details</h4>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="FirstName" class="form-control form-input" type="text" placeholder="First Name"/>
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+            <div class="col-sm-12 col-md-12">
+                <div class="form-group">
+                    <input asp-for="OrderMessage" class="form-control form-input" type="text" placeholder="Write your message" />
+                    <span asp-validation-for="OrderMessage" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="SecondName" class="form-control form-input" type="text" placeholder="Second Name"/>
-                <span asp-validation-for="SecondName" class="text-danger"></span>
+            <div class="col-md-12">
+                <h4>Personal Details</h4>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="EMail" class="form-control form-input" type="text" placeholder="E-Mail"/>
-                <span asp-validation-for="EMail" class="text-danger"></span>
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <input asp-for="FirstName" class="form-control form-input" type="text" placeholder="First Name" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <div class="form-group">
-                <input asp-for="PhoneNumber" class="form-control form-input" type="text" placeholder="Phone Number"/>
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <input asp-for="SecondName" class="form-control form-input" type="text" placeholder="Second Name" />
+                    <span asp-validation-for="SecondName" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <a asp-action="ClearForm" class="btn btn-default">Clear</a>
-        </div>
-        <div class="col-sm-6 col-md-6">
-            <a asp-action="SendOrder" class="btn btn-primary">Send</a>
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <input asp-for="EMail" class="form-control form-input" type="text" placeholder="E-Mail" />
+                    <span asp-validation-for="EMail" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <input asp-for="PhoneNumber" class="form-control form-input" type="text" placeholder="Phone Number" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <a asp-action="ClearForm" class="btn btn-default">Clear</a>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                @*<a asp-action="SendOrder" class="btn btn-primary">Send</a>*@
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
         </div>
     </div>
-</div>
+</form>
+
+
 
 <div class="row">
     <div class="col-md-6">
