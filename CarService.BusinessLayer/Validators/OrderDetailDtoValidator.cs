@@ -6,9 +6,9 @@ using FluentValidation;
 
 namespace CarService.BusinessLayer.Validators
 {
-    public class OrderDetailValidator : AbstractValidator<OrderDetailDto>
+    public class OrderDetailDtoValidator : AbstractValidator<OrderDetailDto>
     {
-        public OrderDetailValidator()
+        public OrderDetailDtoValidator()
         {
             RuleFor(o => o.DataFirst)
                 .NotNull()
