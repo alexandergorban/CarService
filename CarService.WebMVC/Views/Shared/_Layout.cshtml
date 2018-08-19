@@ -18,54 +18,57 @@
     </environment>
 </head>
 <body>
-<nav class="navbar navbar-inverse1 navbar-fixed-top1">
+<nav class="navbar navbar-default navbar-inverse1 navbar-fixed-top1">
     
     <div class="container">
-
-        <div class="navbar-header col-md-12">
-            <div class="col-md-4">
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
-                    <img class="img-logo" src="~/images/logo.png" alt="AAMCO">
-                </a>
-            </div>
-            <div class="col-md-8">
-                <div class="col-md-12 top-links right-align">
-                    <a href="#">
-                        Schedule an appointment
-                    </a>
-                    <a href="#">
-                        Locate a service center
+        <div class="row">
+            <div class="navbar-header col-sm-12 col-md-12">
+                <div class="col-xs-12 col-sm-4 col-md-4 brand">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                        <img class="img-logo" src="~/images/logo.png" alt="AAMCO">
                     </a>
                 </div>
-                <div class="col-md-12 phone-form right-align">
-                    <div class="col-md-5a text">
-                        <p>Your aamco is</p>
-                        <p>TaylorSville ut</p>
+                <div class="col-xs-12 col-sm-8 col-md-8">
+                    <div class="col-md-12 top-links">
+                        <a href="#">
+                            Schedule an appointment
+                        </a>
+                        <a href="#">
+                            Locate a service center
+                        </a>
                     </div>
-                    <div class="col-md-7a contact-phone">
-                        <a href="tel:+8017833280">(801) 783.32.80</a>
+                    <div class="col-md-12 phone-form">
+                        <div class="text">
+                            <p>Your aamco is</p>
+                            <p>TaylorSville ut</p>
+                        </div>
+                        <div class="contact-phone">
+                            <a href="tel:+8017833280">(801) 783.32.80</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             
 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="line"></div>
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Transmission Services</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">Auto Care & Repair</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Corporate Fleet Services</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Extended Warranty Services</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-            <div class="line"></div>
-            <ul class="nav navbar-nav">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Transmission Services</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About">Auto Care & Repair</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Corporate Fleet Services</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Extended Warranty Services</a></li>
-            </ul>
-        </div>
+        
+        
     </div>
 </nav>
     <div class="container body-content">
