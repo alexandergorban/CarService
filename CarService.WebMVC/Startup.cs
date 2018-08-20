@@ -100,7 +100,8 @@ namespace CarService.WebMVC
                         opt => opt.MapFrom(ovm => 
                             new CarTypeDto()
                             {
-                                ModelId = ovm.SelectedCarType
+                                ModelId = ovm.SelectedCarType,
+                                Model = ovm.SelectedCarType.ToString()
                             }))
                     .ForMember(o => o.UserDetail, 
                         opt => opt.MapFrom(ovm => 

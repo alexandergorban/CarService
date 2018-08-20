@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using AutoMapper;
 using CarService.BusinessLayer.Interfaces;
@@ -8,6 +9,7 @@ using CarService.WebMVC.Models;
 using CarService.WebMVC.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CarService.WebMVC.Controllers
 {
@@ -15,16 +17,20 @@ namespace CarService.WebMVC.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IService<OrderDetailDto> _orderDetailService;
+        private readonly IService<CarTypeDto> _carTypeService;
 
-        public HomeController(IMapper mapper, IService<OrderDetailDto> orderDetailService)
+        public HomeController(IMapper mapper, 
+            IService<OrderDetailDto> orderDetailService, 
+            IService<CarTypeDto> carTypeService)
         {
             _mapper = mapper;
             _orderDetailService = orderDetailService;
+            _carTypeService = carTypeService;
         }
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             return View();
         }
@@ -36,12 +42,11 @@ namespace CarService.WebMVC.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
+                // todo fix dropdown
+                model.SelectedCarType = 1;
+
                 var orderDetailDto = _mapper.Map<OrderDetailViewModel, OrderDetailDto>(model);
-                var result = await _orderDetailService.AddEntityAsync(orderDetailDto);
-                if (result != null)
-                {
-                    return Redirect(returnUrl);
-                }
+                await _orderDetailService.AddEntityAsync(orderDetailDto);
             }
 
 
