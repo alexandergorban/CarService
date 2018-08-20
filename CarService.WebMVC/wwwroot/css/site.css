@@ -395,15 +395,21 @@ footer .social-icons a {
   margin-bottom: 30px;
   padding-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #cccccc;
+}
+@media screen and (min-width: 992px) {
+  .form-order-detail {
+    border-bottom: 1px solid #cccccc;
+  }
 }
 .form-order-detail h4 {
   text-transform: uppercase;
   color: #1d3f6f;
   font-size: 16px;
 }
-.form-order-detail .date-section {
-  border-right: 1px solid #cccccc;
+@media screen and (min-width: 992px) {
+  .form-order-detail .date-section {
+    border-right: 1px solid #cccccc;
+  }
 }
 .form-order-detail .date-section .store-hours .day {
   margin-bottom: 5px;
@@ -426,8 +432,15 @@ footer .social-icons a {
   color: #1d3f6f;
   font-size: 22px;
 }
-.bottom-section .email-section {
-  border-right: 1px solid #cccccc;
+@media screen and (max-width: 992px) {
+  .bottom-section .email-section {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bottom-section .email-section {
+    border-right: 1px solid #cccccc;
+  }
 }
 .bottom-section .share-section .share-buttons a img {
   height: 45px;

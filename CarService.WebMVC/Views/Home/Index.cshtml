@@ -46,7 +46,7 @@
 
 <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
     <div class="row form-order-detail">
-        <div class="col-md-6 date-section">
+        <div class="col-sm-12 col-md-6 date-section">
             <div class="col-md-12">
                 <h4>Date & Time</h4>
             </div>
@@ -130,8 +130,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-
+        <div class="col-sm-12 col-md-6">
             <div class="col-md-12">
                 <h4>Your Vehicle</h4>
             </div>
@@ -186,10 +185,10 @@
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-xs-6 col-sm-6 col-md-6">
                 <a asp-action="ClearForm" class="btn btn-default">Clear</a>
             </div>
-            <div class="col-sm-6 col-md-6 right-align">
+            <div class="col-xs-6 col-sm-6 col-md-6 right-align">
                 <button type="submit" class="btn btn-primary">Send</button>
             </div>
         </div>

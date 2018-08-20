@@ -444,7 +444,10 @@ footer {
     margin-bottom: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #cccccc;
+
+    @media screen and (min-width: 992px) {
+        border-bottom: 1px solid #cccccc;
+    }
 
     h4 {
         text-transform: uppercase;
@@ -453,7 +456,9 @@ footer {
     }
 
     .date-section {
-        border-right: 1px solid #cccccc;
+        @media screen and (min-width: 992px) {
+            border-right: 1px solid #cccccc;
+        }
 
         .store-hours {
             .day {
@@ -487,7 +492,13 @@ footer {
     }
 
     .email-section {
-        border-right: 1px solid #cccccc;
+        @media screen and (max-width: 992px) {
+            margin-bottom: 60px;
+        }
+
+        @media screen and (min-width: 992px) {
+            border-right: 1px solid #cccccc;
+        }
     }
 
     .share-section {
