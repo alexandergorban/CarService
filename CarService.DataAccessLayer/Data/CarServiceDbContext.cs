@@ -12,29 +12,10 @@ namespace CarService.DataAccessLayer.Data
         public DbSet<UserDetail> UsersDetail { get; set; }
         public DbSet<CarType> CarTypes { get; set; }
 
-        public CarServiceDbContext()
-        {
-            // todo
-            if (Database.EnsureCreated())
-            {
-                this.EnsureSeedDataForContext();
-            }
-        }
-
         public CarServiceDbContext(DbContextOptions<CarServiceDbContext> options)
             : base(options)
         {
-            // todo
-            if (Database.EnsureCreated())
-            {
-                this.EnsureSeedDataForContext();
-            }
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"server=(localdb)\mssqllocaldb;database=CarServiceDB;integrated security=yes;connectretrycount=0;AttachDBFileName=c:\users\alexander\carservicedb.mdf");
-            base.OnConfiguring(optionsBuilder);
+            Database.EnsureCreated();
         }
     }
 }
