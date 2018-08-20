@@ -14,12 +14,12 @@ namespace CarService.WebMVC.Controllers
 {
     
 
-    public class OrderFormController : Controller
+    public class OrderFormPartialController : Controller
     {
         private readonly IMapper _mapper;
         private readonly IService<OrderDetailDto> _orderDetailService;
 
-        public OrderFormController(IMapper mapper, IService<OrderDetailDto> orderDetailService)
+        public OrderFormPartialController(IMapper mapper, IService<OrderDetailDto> orderDetailService)
         {
             _mapper = mapper;
             _orderDetailService = orderDetailService;
@@ -29,7 +29,8 @@ namespace CarService.WebMVC.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            return View();
+            var model = new OrderDetailViewModel();
+            return View(model);
         }
 
         [HttpPost]
@@ -56,8 +57,16 @@ namespace CarService.WebMVC.Controllers
             {
                 return View();
             }
+        }
 
-            
+        public IActionResult ClearForm()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IActionResult SendOrder()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
