@@ -11,6 +11,7 @@ using CarService.WebMVC.ViewModels;
 using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -30,7 +31,11 @@ namespace CarService.WebMVC
         {
             services.AddMvc();
 
-            services.AddDbContext<CarServiceDbContext>();
+            // register the DbContext on the container, getting the connection string from
+            // appSettings (note: use this during development; in a production environment,
+            // it's better to store the connection string in an environment variable)
+            var connectionString = Configuration["connectionStrings:CarServiceDBConnectionString"];
+            services.AddDbContext<CarServiceDbContext>(o => o.UseSqlServer(connectionString));
 
             services.AddTransient<IRepository<CarType>, CarTypeRepository>();
             services.AddTransient<IRepository<UserDetail>, UserDetailRepository>();
@@ -49,7 +54,7 @@ namespace CarService.WebMVC
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, CarServiceDbContext carServiceDbContext)
         {
             if (env.IsDevelopment())
             {
@@ -60,6 +65,9 @@ namespace CarService.WebMVC
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            // Seed mock data
+            //carServiceDbContext.EnsureSeedDataForContext();
 
             app.UseStaticFiles();
 
