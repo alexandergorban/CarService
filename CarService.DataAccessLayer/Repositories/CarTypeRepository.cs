@@ -23,7 +23,7 @@ namespace CarService.DataAccessLayer.Repositories
 
         public override async Task<IEnumerable<CarType>> GetEntitiesAsync()
         {
-            return await _context.CarTypes
+            return await _context.ag_CarTypes
                 .OrderBy(c => c.ModelId)
                 .ToListAsync();
         }

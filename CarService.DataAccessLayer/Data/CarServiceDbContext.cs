@@ -8,9 +8,9 @@ namespace CarService.DataAccessLayer.Data
 {
     public class CarServiceDbContext : DbContext
     {
-        public DbSet<OrderDetail> OrdersDetail { get; set; }
-        public DbSet<UserDetail> UsersDetail { get; set; }
-        public DbSet<CarType> CarTypes { get; set; }
+        public DbSet<OrderDetail> ag_OrdersDetail { get; set; }
+        public DbSet<UserDetail> ag_UsersDetail { get; set; }
+        public DbSet<CarType> ag_CarTypes { get; set; }
 
         public CarServiceDbContext(DbContextOptions<CarServiceDbContext> options)
             : base(options)

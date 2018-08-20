@@ -12,9 +12,9 @@ namespace CarService.DataAccessLayer.Data
             // first, clear the database.  This ensures we can always start 
             // fresh with each demo.  Not advised for production environments, obviously
 
-            context.OrdersDetail.RemoveRange(context.OrdersDetail);
-            context.UsersDetail.RemoveRange(context.UsersDetail);
-            context.CarTypes.RemoveRange(context.CarTypes);
+            context.ag_OrdersDetail.RemoveRange(context.ag_OrdersDetail);
+            context.ag_UsersDetail.RemoveRange(context.ag_UsersDetail);
+            context.ag_CarTypes.RemoveRange(context.ag_CarTypes);
             context.SaveChanges();
 
             // init seed data
@@ -74,8 +74,8 @@ namespace CarService.DataAccessLayer.Data
                 }
             };
 
-            context.OrdersDetail.AddRange(ordersDetail);
-            context.CarTypes.AddRange(carTypes);
+            context.ag_OrdersDetail.AddRange(ordersDetail);
+            context.ag_CarTypes.AddRange(carTypes);
             context.SaveChanges();
         }
     }
