@@ -155,6 +155,10 @@ nav.navbar {
         .navbar-brand {
             padding-top: 8px;
 
+            @media screen and (min-width: 992px) {
+                padding-left: 60px;
+            }
+
             @media screen and (max-width: 768px) {
                 float: none;
             }
@@ -166,6 +170,12 @@ nav.navbar {
                     display: inline;
                 }
             }
+        }
+    }
+
+    .top-right-section {
+        @media screen and (min-width: 992px) {
+            padding-right: 50px;
         }
     }
 

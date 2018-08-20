@@ -126,6 +126,11 @@ nav.navbar .navbar-collapse ul.nav.navbar-nav li a {
 .navbar-header .brand .navbar-brand {
   padding-top: 8px;
 }
+@media screen and (min-width: 992px) {
+  .navbar-header .brand .navbar-brand {
+    padding-left: 60px;
+  }
+}
 @media screen and (max-width: 768px) {
   .navbar-header .brand .navbar-brand {
     float: none;
@@ -137,6 +142,11 @@ nav.navbar .navbar-collapse ul.nav.navbar-nav li a {
 @media screen and (max-width: 768px) {
   .navbar-header .brand .navbar-brand .img-logo {
     display: inline;
+  }
+}
+@media screen and (min-width: 992px) {
+  .navbar-header .top-right-section {
+    padding-right: 50px;
   }
 }
 .navbar-header .top-links {
