@@ -391,7 +391,45 @@ footer .social-icons a {
   font-size: 34px;
   font-family: 'Roboto', sans-serif;
 }
-.share-buttons a img {
+.form-order-detail {
+  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cccccc;
+}
+.form-order-detail h4 {
+  text-transform: uppercase;
+  color: #1d3f6f;
+  font-size: 16px;
+}
+.form-order-detail .date-section {
+  border-right: 1px solid #cccccc;
+}
+.form-order-detail .date-section .store-hours .day {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #1d3f6f;
+}
+.form-order-detail .date-section .your-service .checkbox-item {
+  padding-left: 0;
+}
+.form-order-detail .date-section .your-service .checkbox-item .form-group {
+  margin-bottom: 10px;
+}
+.bottom-section {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.bottom-section h3 {
+  text-transform: uppercase;
+  color: #1d3f6f;
+  font-size: 22px;
+}
+.bottom-section .email-section {
+  border-right: 1px solid #cccccc;
+}
+.bottom-section .share-section .share-buttons a img {
   height: 45px;
   padding: 5px;
   border: 0;

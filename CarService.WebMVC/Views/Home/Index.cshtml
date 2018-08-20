@@ -45,14 +45,14 @@
 @*@await Html.PartialAsync("~/Pages/OrderFormPartial/Index.cshtml")*@
 
 <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row form-order-detail">
+        <div class="col-md-6 date-section">
             <div class="col-md-12">
-                <h4>Data & Time</h4>
+                <h4>Date & Time</h4>
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='datetime-local')" />
+                    <input asp-for="DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
                     <span asp-validation-for="DataFirst" class="text-danger"></span>
                 </div>
             </div>
@@ -64,7 +64,7 @@
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='datetime-local')" />
+                    <input asp-for="DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
                     <span asp-validation-for="DataSecond" class="text-danger"></span>
                 </div>
             </div>
@@ -74,21 +74,21 @@
                     <span asp-validation-for="TimeSecond" class="text-danger"></span>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-sm-6 col-md-6 store-hours">
                 <h4>Store Hours</h4>
-                <p>Mon - Wed</p>
+                <p class="day">Mon - Wed</p>
                 <p>08:00 AM - 05:00 PM</p>
-                <p>Thu</p>
+                <p class="day">Thu</p>
                 <p>08:00 AM - 04:00 PM</p>
-                <p>Fri</p>
+                <p class="day">Fri</p>
                 <p>08:00 AM - 01:00 PM</p>
-                <p>Sat</p>
+                <p class="day">Sat</p>
                 <p>Close</p>
             </div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-sm-6 col-md-6 your-service">
                 <h4>Choose your services</h4>
                 <p>Please select the type of service(s) needed</p>
-                <div class="col-md-12">
+                <div class="col-md-12 checkbox-item">
                     <div class="form-group">
                         <div class="checkbox">
                             <label asp-for="Transmission">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 checkbox-item">
                     <div class="form-group">
                         <div class="checkbox">
                             <label asp-for="VehicleMaintenance">
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 checkbox-item">
                     <div class="form-group">
                         <div class="checkbox">
                             <label asp-for="VehicleRapair">
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 checkbox-item">
                     <div class="form-group">
                         <div class="checkbox">
                             <label asp-for="Other">
@@ -145,10 +145,10 @@
                 <div class="form-group">
                     <select class="form-control">
                         <option value="">Select your car</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option>Audi</option>
+                        <option>Toyota</option>
+                        <option>Hundai</option>
+                        <option>Reno</option>
                     </select>
                 </div>
 
@@ -189,15 +189,15 @@
             <div class="col-sm-6 col-md-6">
                 <a asp-action="ClearForm" class="btn btn-default">Clear</a>
             </div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-sm-6 col-md-6 right-align">
                 <button type="submit" class="btn btn-primary">Send</button>
             </div>
         </div>
     </div>
 </form>
 
-<div class="row">
-    <div class="col-md-6">
+<div class="row bottom-section">
+    <div class="col-md-6 email-section">
         <div class="col-md-12">
             <h3>Sign Up for special offers</h3>
             <p>
@@ -214,7 +214,7 @@
             </form>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 share-section">
         <div class="col-md-12">
             <h3>Tell to your friends</h3>
             <p>

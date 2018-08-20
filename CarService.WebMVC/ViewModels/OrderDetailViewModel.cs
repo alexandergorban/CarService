@@ -10,14 +10,14 @@ namespace CarService.WebMVC.ViewModels
     public class OrderDetailViewModel
     {
         [Required]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime DataFirst { get; set; }
 
         [DataType(DataType.Time)]
         public DateTime TimeFirst { get; set; }
 
         [Required]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime DataSecond { get; set; }
 
         [DataType(DataType.Time)]
