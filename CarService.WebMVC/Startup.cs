@@ -67,7 +67,7 @@ namespace CarService.WebMVC
             }
 
             // Seed mock data
-            //carServiceDbContext.EnsureSeedDataForContext();
+            carServiceDbContext.EnsureSeedDataForContext();
 
             app.UseStaticFiles();
 
