@@ -15,17 +15,9 @@ namespace CarService.WebMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IMapper _mapper;
-        private readonly IService<OrderDetailDto> _orderDetailService;
-        private readonly IService<CarTypeDto> _carTypeService;
-
-        public HomeController(IMapper mapper, 
-            IService<OrderDetailDto> orderDetailService, 
-            IService<CarTypeDto> carTypeService)
+        public HomeController()
         {
-            _mapper = mapper;
-            _orderDetailService = orderDetailService;
-            _carTypeService = carTypeService;
+           
         }
 
         [HttpGet]
@@ -39,17 +31,6 @@ namespace CarService.WebMVC.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index(OrderDetailViewModel model, string returnUrl = null)
         {
-            ViewData["ReturnUrl"] = returnUrl;
-            if (ModelState.IsValid)
-            {
-                // todo fix dropdown
-                model.SelectedCarType = 1;
-
-                var orderDetailDto = _mapper.Map<OrderDetailViewModel, OrderDetailDto>(model);
-                await _orderDetailService.AddEntityAsync(orderDetailDto);
-            }
-
-
             return View();
         }
 
