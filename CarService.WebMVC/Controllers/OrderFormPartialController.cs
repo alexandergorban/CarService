@@ -18,15 +18,11 @@ namespace CarService.WebMVC.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IService<OrderDetailDto> _orderDetailService;
-        private readonly IService<CarTypeDto> _carTypeService;
 
-        public OrderFormPartialController(IMapper mapper, 
-            IService<OrderDetailDto> orderDetailService, 
-            IService<CarTypeDto> carTypeService)
+        public OrderFormPartialController(IMapper mapper, IService<OrderDetailDto> orderDetailService)
         {
             _mapper = mapper;
             _orderDetailService = orderDetailService;
-            _carTypeService = carTypeService;
         }
 
         [HttpGet]
@@ -42,17 +38,25 @@ namespace CarService.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(OrderDetailViewModel model, string returnUrl = null)
         {
-            ViewData["ReturnUrl"] = returnUrl;
-            if (ModelState.IsValid)
+            try
             {
-                // todo fix dropdown
-                model.SelectedCarType = 1;
+                ViewData["ReturnUrl"] = returnUrl;
+                if (ModelState.IsValid)
+                {
+                    var orderDetailDto = _mapper.Map<OrderDetailViewModel, OrderDetailDto>(model);
+                    var result = await _orderDetailService.AddEntityAsync(orderDetailDto);
+                    if (result != null)
+                    {
+                        return Redirect(returnUrl);
+                    }
+                }
 
-                var orderDetailDto = _mapper.Map<OrderDetailViewModel, OrderDetailDto>(model);
-                await _orderDetailService.AddEntityAsync(orderDetailDto);
+                return View();
             }
-
-            return View();
+            catch
+            {
+                return View();
+            }
         }
 
         public IActionResult ClearForm()
