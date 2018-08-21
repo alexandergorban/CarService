@@ -40,9 +40,9 @@
     </div>
 </div>
 
-@*@await Html.PartialAsync("~/Pages/OrderFormPartial/Index.cshtml")*@
+@await Html.PartialAsync("~/Views/OrderFormPartial/Index.cshtml")
 
-<form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+@*<form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
     <div class="row form-order-detail">
         <div class="col-sm-12 col-md-6 date-section">
             <div class="col-md-12">
@@ -191,7 +191,7 @@
             </div>
         </div>
     </div>
-</form>
+</form>*@
 
 <div class="row bottom-section">
     <div class="col-md-6 email-section">
