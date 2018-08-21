@@ -22,8 +22,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Pages\OrderFormPartial\" />
-    <Folder Include="Services\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 

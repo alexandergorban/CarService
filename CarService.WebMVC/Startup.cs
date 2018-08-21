@@ -7,6 +7,7 @@ using CarService.DataAccessLayer.Entities;
 using CarService.DataAccessLayer.Interfaces;
 using CarService.DataAccessLayer.Repositories;
 using CarService.Shared.Models;
+using CarService.WebMVC.Services;
 using CarService.WebMVC.ViewModels;
 using FluentValidation;
 using Microsoft.AspNetCore.Builder;
@@ -44,6 +45,8 @@ namespace CarService.WebMVC
             services.AddScoped<IService<CarTypeDto>, CarTypeService>();
             services.AddScoped<IService<UserDetailDto>, UserDetailService>();
             services.AddScoped<IService<OrderDetailDto>, OrderDetailService>();
+
+            services.AddScoped<OrderDetailViewModelService>();
 
             services.AddTransient<AbstractValidator<CarTypeDto>, CarTypeDtoValidator>();
             services.AddTransient<AbstractValidator<UserDetailDto>, UserDetailDtoValidator>();

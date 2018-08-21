@@ -6,6 +6,7 @@ using CarService.BusinessLayer.Interfaces;
 using CarService.BusinessLayer.Services;
 using CarService.Shared.Models;
 using CarService.WebMVC.Models;
+using CarService.WebMVC.Services;
 using CarService.WebMVC.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,21 +19,25 @@ namespace CarService.WebMVC.Controllers
         private readonly IMapper _mapper;
         private readonly IService<OrderDetailDto> _orderDetailService;
         private readonly IService<CarTypeDto> _carTypeService;
+        private readonly OrderDetailViewModelService _orderDetailViewModelService;
 
-        public HomeController(IMapper mapper, 
+        public HomeController(IMapper mapper, OrderDetailViewModelService orderDetailViewModelService,
             IService<OrderDetailDto> orderDetailService, 
             IService<CarTypeDto> carTypeService)
         {
             _mapper = mapper;
             _orderDetailService = orderDetailService;
             _carTypeService = carTypeService;
+            _orderDetailViewModelService = orderDetailViewModelService;
         }
 
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            return View();
+            var orderDetail = await _orderDetailViewModelService.CreateOrderDetail();
+
+            return View(orderDetail);
         }
 
         [HttpPost]
@@ -49,8 +54,9 @@ namespace CarService.WebMVC.Controllers
                 await _orderDetailService.AddEntityAsync(orderDetailDto);
             }
 
+            var orderDetail = await _orderDetailViewModelService.CreateOrderDetail();
 
-            return View();
+            return View(orderDetail);
         }
 
         public IActionResult About()

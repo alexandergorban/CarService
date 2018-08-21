@@ -9,26 +9,26 @@
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
-                    <span asp-validation-for="DataFirst" class="text-danger"></span>
+                    <input asp-for="@Model.DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
+                    <span asp-validation-for="@Model.DataFirst" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="TimeFirst" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
-                    <span asp-validation-for="TimeFirst" class="text-danger"></span>
+                    <input asp-for="@Model.TimeFirst" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
+                    <span asp-validation-for="@Model.TimeFirst" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
-                    <span asp-validation-for="DataSecond" class="text-danger"></span>
+                    <input asp-for="@Model.DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
+                    <span asp-validation-for="@Model.DataSecond" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="TimeSecond" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
-                    <span asp-validation-for="TimeSecond" class="text-danger"></span>
+                    <input asp-for="@Model.TimeSecond" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
+                    <span asp-validation-for="@Model.TimeSecond" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6 store-hours">
@@ -48,8 +48,8 @@
                 <div class="col-md-12 checkbox-item">
                     <div class="form-group">
                         <div class="checkbox">
-                            <label asp-for="Transmission">
-                                <input asp-for="Transmission" />
+                            <label asp-for="@Model.Transmission">
+                                <input asp-for="@Model.Transmission" />
                                 @Html.DisplayNameFor(m => m.Transmission)
                             </label>
                         </div>
@@ -58,8 +58,8 @@
                 <div class="col-md-12 checkbox-item">
                     <div class="form-group">
                         <div class="checkbox">
-                            <label asp-for="VehicleMaintenance">
-                                <input asp-for="VehicleMaintenance" />
+                            <label asp-for="@Model.VehicleMaintenance">
+                                <input asp-for="@Model.VehicleMaintenance" />
                                 @Html.DisplayNameFor(m => m.VehicleMaintenance)
                             </label>
                         </div>
@@ -68,8 +68,8 @@
                 <div class="col-md-12 checkbox-item">
                     <div class="form-group">
                         <div class="checkbox">
-                            <label asp-for="VehicleRapair">
-                                <input asp-for="VehicleRapair" />
+                            <label asp-for="@Model.VehicleRapair">
+                                <input asp-for="@Model.VehicleRapair" />
                                 @Html.DisplayNameFor(m => m.VehicleRapair)
                             </label>
                         </div>
@@ -78,8 +78,8 @@
                 <div class="col-md-12 checkbox-item">
                     <div class="form-group">
                         <div class="checkbox">
-                            <label asp-for="Other">
-                                <input asp-for="Other" />
+                            <label asp-for="@Model.Other">
+                                <input asp-for="@Model.Other" />
                                 @Html.DisplayNameFor(m => m.Other)
                             </label>
                         </div>
@@ -93,26 +93,19 @@
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="YearOfCar" class="form-control form-input" type="number" placeholder="Year of car" />
-                    <span asp-validation-for="YearOfCar" class="text-danger"></span>
+                    <input asp-for="@Model.YearOfCar" class="form-control form-input" type="number" placeholder="Year of car" />
+                    <span asp-validation-for="@Model.YearOfCar" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <select class="form-control">
-                        <option value="">Select your car</option>
-                        <option>Audi</option>
-                        <option>Toyota</option>
-                        <option>Hundai</option>
-                        <option>Reno</option>
-                    </select>
+                    <select asp-for="@Model.SelectedCarType" asp-items="@Model.CarTypes" class="form-control"></select>
                 </div>
-
             </div>
             <div class="col-sm-12 col-md-12">
                 <div class="form-group">
-                    <input asp-for="OrderMessage" class="form-control form-input" type="text" placeholder="Write your message" />
-                    <span asp-validation-for="OrderMessage" class="text-danger"></span>
+                    <input asp-for="@Model.OrderMessage" class="form-control form-input" type="text" placeholder="Write your message" />
+                    <span asp-validation-for="@Model.OrderMessage" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-12">
@@ -120,26 +113,26 @@
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="FirstName" class="form-control form-input" type="text" placeholder="First Name" />
-                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                    <input asp-for="@Model.FirstName" class="form-control form-input" type="text" placeholder="First Name" />
+                    <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="SecondName" class="form-control form-input" type="text" placeholder="Second Name" />
-                    <span asp-validation-for="SecondName" class="text-danger"></span>
+                    <input asp-for="@Model.SecondName" class="form-control form-input" type="text" placeholder="Second Name" />
+                    <span asp-validation-for="@Model.SecondName" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="EMail" class="form-control form-input" type="text" placeholder="E-Mail" />
-                    <span asp-validation-for="EMail" class="text-danger"></span>
+                    <input asp-for="@Model.EMail" class="form-control form-input" type="text" placeholder="E-Mail" />
+                    <span asp-validation-for="@Model.EMail" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
                 <div class="form-group">
-                    <input asp-for="PhoneNumber" class="form-control form-input" type="text" placeholder="Phone Number" />
-                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    <input asp-for="@Model.PhoneNumber" class="form-control form-input" type="text" placeholder="Phone Number" />
+                    <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
