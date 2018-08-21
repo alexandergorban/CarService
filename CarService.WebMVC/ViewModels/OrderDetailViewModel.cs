@@ -13,17 +13,17 @@ namespace CarService.WebMVC.ViewModels
     {
         [Required]
         [DataType(DataType.Date)]
-        public DateTime DataFirst { get; set; }
+        public DateTime? DataFirst { get; set; }
 
         [DataType(DataType.Time)]
-        public DateTime TimeFirst { get; set; }
+        public DateTime? TimeFirst { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime DataSecond { get; set; }
+        public DateTime? DataSecond { get; set; }
 
         [DataType(DataType.Time)]
-        public DateTime TimeSecond { get; set; }
+        public DateTime? TimeSecond { get; set; }
 
         [Display(Name = "Transmission")]
         public bool Transmission { get; set; }
