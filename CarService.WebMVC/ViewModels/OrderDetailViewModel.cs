@@ -15,6 +15,7 @@ namespace CarService.WebMVC.ViewModels
         [DataType(DataType.Date)]
         public DateTime? DataFirst { get; set; }
 
+        [Required]
         [DataType(DataType.Time)]
         public DateTime? TimeFirst { get; set; }
 
@@ -22,6 +23,7 @@ namespace CarService.WebMVC.ViewModels
         [DataType(DataType.Date)]
         public DateTime? DataSecond { get; set; }
 
+        [Required]
         [DataType(DataType.Time)]
         public DateTime? TimeSecond { get; set; }
 

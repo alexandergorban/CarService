@@ -7,28 +7,32 @@
             <div class="col-md-12">
                 <h4>Date & Time</h4>
             </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
-                    <span asp-validation-for="@Model.DataFirst" class="text-danger"></span>
+            <div class="col-sm-12 col-md-12 no-padding">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.DataFirst" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
+                        <span asp-validation-for="@Model.DataFirst" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.TimeFirst" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
+                        <span asp-validation-for="@Model.TimeFirst" class="text-danger"></span>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.TimeFirst" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
-                    <span asp-validation-for="@Model.TimeFirst" class="text-danger"></span>
+            <div class="col-sm-12 col-md-12 no-padding">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
+                        <span asp-validation-for="@Model.DataSecond" class="text-danger"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.DataSecond" class="form-control form-input" type="text" placeholder="Select a date" onfocus="(this.type='date')" />
-                    <span asp-validation-for="@Model.DataSecond" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.TimeSecond" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
-                    <span asp-validation-for="@Model.TimeSecond" class="text-danger"></span>
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.TimeSecond" class="form-control form-input" type="text" placeholder="Select your time" onfocus="(this.type='time')" />
+                        <span asp-validation-for="@Model.TimeSecond" class="text-danger"></span>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6 store-hours">
@@ -91,15 +95,17 @@
             <div class="col-md-12">
                 <h4>Your Vehicle</h4>
             </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.YearOfCar" class="form-control form-input" type="number" placeholder="Year of car" />
-                    <span asp-validation-for="@Model.YearOfCar" class="text-danger"></span>
+            <div class="col-sm-12 col-md-12 no-padding">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.YearOfCar" class="form-control form-input" type="number" placeholder="Year of car" />
+                        <span asp-validation-for="@Model.YearOfCar" class="text-danger"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <select asp-for="@Model.SelectedCarType" asp-items="@Model.CarTypes" class="form-control"></select>
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <select asp-for="@Model.SelectedCarType" asp-items="@Model.CarTypes" class="form-control"></select>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-12">
@@ -111,28 +117,32 @@
             <div class="col-md-12">
                 <h4>Personal Details</h4>
             </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.FirstName" class="form-control form-input" type="text" placeholder="First Name" />
-                    <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+            <div class="col-sm-12 col-md-12 no-padding">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.FirstName" class="form-control form-input" type="text" placeholder="First Name" />
+                        <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.SecondName" class="form-control form-input" type="text" placeholder="Second Name" />
+                        <span asp-validation-for="@Model.SecondName" class="text-danger"></span>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.SecondName" class="form-control form-input" type="text" placeholder="Second Name" />
-                    <span asp-validation-for="@Model.SecondName" class="text-danger"></span>
+            <div class="col-sm-12 col-md-12 no-padding">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.EMail" class="form-control form-input" type="text" placeholder="E-Mail" />
+                        <span asp-validation-for="@Model.EMail" class="text-danger"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.EMail" class="form-control form-input" type="text" placeholder="E-Mail" />
-                    <span asp-validation-for="@Model.EMail" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input asp-for="@Model.PhoneNumber" class="form-control form-input" type="text" placeholder="Phone Number" />
-                    <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input asp-for="@Model.PhoneNumber" class="form-control form-input" type="text" placeholder="Phone Number" />
+                        <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+                    </div>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
