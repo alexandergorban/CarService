@@ -52,10 +52,11 @@ namespace CarService.WebMVC.Controllers
 
                 var orderDetailDto = _mapper.Map<OrderDetailViewModel, OrderDetailDto>(model);
                 await _orderDetailService.AddEntityAsync(orderDetailDto);
+
+                return RedirectToAction("ThanksView");
             }
 
             var orderDetail = await _orderDetailViewModelService.CreateOrderDetail();
-
             return View(orderDetail);
         }
 
@@ -69,6 +70,14 @@ namespace CarService.WebMVC.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+
+        public IActionResult ThanksView()
+        {
+            ViewData["Message"] = "Thanks.";
 
             return View();
         }
